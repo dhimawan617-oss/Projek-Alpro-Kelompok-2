@@ -34,7 +34,7 @@ void tampilkan(Penduduk *data, int n)
 
     if (n == 0)
     {
-        cout << "[ERROR] Belum ada data untuk dicari.\n";
+        cout << "[ERROR] Belum ada data untuk ditampilkan.\n";
         return;
     }
 
@@ -478,7 +478,6 @@ int main()
             break;
         case 7:
             bacaFile(data, n);
-            tampilkan(data, n);
             break;
         case 8:
             system("cls");

@@ -491,7 +491,7 @@ int main()
         if (pilihan != 8)
         {
             cout << "\n[Tekan Enter untuk kembali ke menu...]";
-            cin.get(); 
+            cin.get();
         }
 
     } while (pilihan != 8);

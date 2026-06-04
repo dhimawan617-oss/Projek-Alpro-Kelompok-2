@@ -152,9 +152,8 @@ void hapus_datawarga(Penduduk *data, int &n)
                 data[j] = data[j + 1];
             }
             n--;
-            cout << "[SUKSES] Data Berhasil Di Hapus\n";
             ketemu = true;
-            tampilkan(data, n);
+            cout << "[SUKSES] Data Berhasil Di Hapus\n";
             break;
         }
     }

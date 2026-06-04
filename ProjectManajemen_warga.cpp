@@ -123,7 +123,7 @@ void hapus_datawarga(Penduduk *data, int &n)
 
     if (n == 0)
     {
-        cout << "[ERROR] Belum ada data untuk dicari.\n";
+        cout << "[ERROR] Belum ada data untuk dihapus.\n";
         return;
     }
 
@@ -186,7 +186,6 @@ void cariData(Penduduk *data, int n)
 
         bool found = false;
 
-        // Tampilkan header tabel
         cout << "\n\nHasil Pencarian : ";
         cout << "\n=====================================================================================\n";
         cout << left
@@ -201,7 +200,6 @@ void cariData(Penduduk *data, int n)
         int count = 0;
         for (int i = 0; i < n; i++)
         {
-            // Pencarian case-insensitive (cek substring)
             string namaLower = data[i].nama;
             string cariLower = cari;
             for (char &c : namaLower)
@@ -248,7 +246,7 @@ void sorting(Penduduk *data, int n)
     cout << "====================================================\n";
     if (n == 0)
     {
-        cout << "[ERROR] Belum ada data untuk dicari.\n";
+        cout << "[ERROR] Belum ada data untuk diurutkan.\n";
         return;
     }
 
@@ -295,7 +293,7 @@ void simpanFile(Penduduk *data, int n)
     cout << "====================================================\n";
     if (n == 0)
     {
-        cout << "[ERROR] Belum ada data untuk dicari.\n";
+        cout << "[ERROR] Belum ada data untuk disimpan.\n";
         return;
     }
 
@@ -306,7 +304,6 @@ void simpanFile(Penduduk *data, int n)
         return;
     }
 
-    // Simpan jumlah data di baris pertama supaya bacaFile tahu berapa record
     file << n << "\n";
 
     for (int i = 0; i < n; i++)
@@ -336,10 +333,8 @@ void bacaFile(Penduduk *data, int &n)
         return;
     }
 
-    // Reset data lama
     n = 0;
 
-    // Baca jumlah record dari baris pertama
     int jumlah;
     file >> jumlah;
     file.ignore();
@@ -424,7 +419,7 @@ int main()
         if (username_login != username_daftar && pasword_login != username_pasword)
             cout << "Username dan Pasword Anda Tidak Valid!, Sisa Kesempatan " << i - 1 << " Lagi" << endl;
         else if (username_login != username_daftar)
-            cout << "username Anda Tidak Sesuai!, Sisa Kesempatan " << i - 1 << " Lagi" << endl;
+            cout << "Username Anda Tidak Sesuai!, Sisa Kesempatan " << i - 1 << " Lagi" << endl;
         else if (pasword_login != username_pasword)
             cout << "Pasword Anda Tidak Sesuai!, Sisa Kesempatan " << i - 1 << " Lagi" << endl;
         else
@@ -442,7 +437,9 @@ int main()
 
     do
     {
-        cout << endl;
+
+        system("cls");
+
         cout << "\n====================================================\n";
         cout << "     Selamat datang di Sistem Informasi Penduduk\n";
         cout << "====================================================\n";
@@ -484,16 +481,17 @@ int main()
             tampilkan(data, n);
             break;
         case 8:
+            system("cls");
             cout << "Terima kasih telah menggunakan program ini!\n";
             break;
         default:
-            cout << "Pilihan tidak valid! Masukkan angka 1-7.\n";
+            cout << "Pilihan tidak valid! Masukkan angka 1-8.\n";
         }
 
         if (pilihan != 8)
         {
             cout << "\n[Tekan Enter untuk kembali ke menu...]";
-            cin.get();
+            cin.get(); 
         }
 
     } while (pilihan != 8);
